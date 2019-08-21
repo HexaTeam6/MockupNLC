@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -8,7 +9,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!-- <link rel="icon" href="" type="image/x-icon" /> -->
+    <!-- <link rel="icon" href="img/basic/favicon.ico" type="image/x-icon" /> -->
     <title>NLC</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/app.css" />
@@ -32,7 +33,7 @@
     </style>
 
     <script>
-      (function(w, d, u) {  
+      (function(w, d, u) {
         w.readyQ = [];
         w.bindReadyQ = [];
         function p(x, y) {
@@ -52,9 +53,8 @@
         };
       })(window, document);
     </script>
-
   </head>
-  
+
   <body class="light">
     <!-- Pre loader -->
     <div id="loader" class="loader">
@@ -110,53 +110,33 @@
         </div>
       </div>
     </div>
-    <div id="app">
-      <main>
-        <div id="primary" class="p-t-b-100 height-full">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4 mx-md-auto paper-card">
-                <div class="text-center">
-                  <!-- <img src="" alt="" /> -->
-                  <h3 class="mt-2">Welcome Back</h3>
-                  <p class="p-t-b-20">
-                    Hey Soldier welcome back signin now there is lot of new
-                    stuff waiting for you
-                  </p>
-                </div>
 
-                <!-- Form action -->
-                <form action=""> 
-                  <div class="form-group has-icon">
-                    <i class="icon-envelope-o"></i>
-                    <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      placeholder="Email Address"
-                    />
+    <!--#app -->
+    <div id="app">
+      <main class="parallel">
+        <div class="row grid">
+          <div class="col-md-6 white">
+            <div class="p-5">
+              <div class="p-5">
+                <div class="text-center p-t-100">
+                  <p class="s-128 bolder p-t-b-100">Opps!</p>
+                  <p class="s-18">oh dear! you are lost don't try to hard.</p>
+                  <div class="p-t-b-20">
+                    <a href="index-2.html" class="btn  btn-outline-primary btn-lg">
+                      <i class="icon icon-arrow_back"></i> Go Back To Home
+                    </a>
                   </div>
-                  <div class="form-group has-icon">
-                    <i class="icon-user-secret"></i>
-                    <input
-                      type="text"
-                      class="form-control form-control-lg"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <input
-                    type="submit"
-                    class="btn btn-primary btn-lg btn-block"
-                    value="Log In"
-                  />
-                </form>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-md-6 height-full" data-bg-repeat="false" data-bg-possition="center"
+                style="background: url('img/dummy/cs3.gif') #FFEFE4"></div>
         </div>
-        <!-- #primary -->
       </main>
     </div>
     <!--/#app -->
+    
     <script src="js/app.js"></script>
 
     <script>
@@ -168,6 +148,47 @@
           $(d).bind("ready", f);
         });
       })(jQuery, document);
+
+      // Input DateTimePicker
+      jQuery(function(){
+        jQuery('#inputDateStart').datetimepicker({
+          format:'Y/m/d',
+          onShow:function( ct ){
+          this.setOptions({
+            maxDate:jQuery('#inputDateEnd').val()?jQuery('#inputDateEnd').val():false
+          })
+          },
+          timepicker:false
+        });
+        jQuery('#inputDateEnd').datetimepicker({
+          format:'Y/m/d',
+          onShow:function( ct ){
+          this.setOptions({
+            minDate:jQuery('#inputDateStart').val()?jQuery('#inputDateStart').val():false
+          })
+          },
+          timepicker:false
+        });
+
+        jQuery('#inputTimeStart').datetimepicker({
+          format:'H:i',
+          onShow:function( ct ){
+          this.setOptions({
+            maxTime:jQuery('#inputTimeEnd').val()?jQuery('#inputTimeEnd').val():false
+          })
+          },
+          datepicker:false
+        });
+        jQuery('#inputTimeEnd').datetimepicker({
+          format:'H:i',
+          onShow:function( ct ){
+          this.setOptions({
+            minTime:jQuery('#inputTimeStart').val()?jQuery('#inputTimeStart').val():false
+          })
+          },
+          datepicker:false
+        });
+      });
     </script>
   </body>
   </html>
