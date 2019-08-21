@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- <link rel="icon" href="img/basic/favicon.ico" type="image/x-icon" /> -->
+    <title>NLC</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/app.css" />
+    <style>
+      .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f8fa;
+        z-index: 9998;
+        text-align: center;
+      }
+
+      .plane-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    </style>
+
+    <script>
+      (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+        function p(x, y) {
+          if (x == "ready") {
+            w.bindReadyQ.push(y);
+          } else {
+            w.readyQ.push(x);
+          }
+        }
+        var a = { ready: p, bind: p };
+        w.$ = w.jQuery = function(f) {
+          if (f === d || f === u) {
+            return a;
+          } else {
+            p(f);
+          }
+        };
+      })(window, document);
+    </script>
+  </head>
+
+  <body class="light">
+    <!-- Pre loader -->
+    <div id="loader" class="loader">
+      <div class="plane-container">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--#app -->
+    <div id="app">
+      <!-- SideBar -->
+      <aside
+        class="main-sidebar fixed offcanvas shadow"
+        data-toggle="offcanvas"
+      >
+        <section class="sidebar">
+          <div class="w-80px mt-3 mb-3 ml-3">
+            <!-- <img src="img/basic/logo.png" alt="" /> -->
+            <h1>LOGO</h1>
+          </div>
+          <div class="relative">
+            <a
+              data-toggle="collapse"
+              href="#userSettingsCollapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="userSettingsCollapse"
+              class="btn-fab btn-fab-sm absolute fab-right-bottom fab-top btn-primary shadow1 "
+            >
+              <i class="icon icon-cogs"></i>
+            </a>
+            <div class="user-panel p-3 light mb-2">
+              <div>
+                <div class="float-left image">
+                  <img
+                    class="user_avatar"
+                    src="img/dummy/u2.png"
+                    alt="User Image"
+                  />
+                </div>
+                <div class="float-left info">
+                  <h6 class="font-weight-light mt-2 mb-1">Abdur Rachman Wahed</h6>
+                  <a href="#"
+                    ><i class="icon-circle text-primary blink"></i> Online</a
+                  >
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="collapse multi-collapse" id="userSettingsCollapse">
+                <div class="list-group mt-3 shadow">
+                  <a href="#" class="list-group-item list-group-item-action"
+                    ><i class="mr-2 icon-cogs text-yellow"></i>Settings</a
+                  >
+                  <a href="#" class="list-group-item list-group-item-action"
+                    ><i class="mr-2 icon-security text-purple"></i>Change
+                    Password</a
+                  >
+                  <a href="#"
+                    class="list-group-item list-group-item-action ">
+                    <i class="mr-2 icon-exit_to_app text-danger"></i>Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="header"><strong>MENU</strong></li>
+            <li class="treeview">
+              <a href="menu_sesi.html">
+                <i class="icon icon-th-list purple-text s-18"></i>
+                <span>Sesi</span>
+                <i class="icon s-18 pull-right"></i>
+              </a>
+
+              <a href="menu_soal.html">
+                <i class="icon icon-documents3 blue-text s-18"></i>
+                <span>Soal</span>
+                <i class="icon s-18 pull-right"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <!--Sidebar End-->
+      
+      <!-- Header -->
+      <div class="has-sidebar-left">
+        <div class="pos-f-t">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+              <div class="search-bar">
+                <input
+                  class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
+                  type="text"
+                  placeholder="start typing..."
+                />
+              </div>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#navbarToggleExternalContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="paper-nav-toggle paper-nav-white active "
+                ><i></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="sticky">
+          <div
+            class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue accent-3"
+          >
+            <div class="relative">
+              <a
+                href="#"
+                data-toggle="push-menu"
+                class="paper-nav-toggle pp-nav-toggle"
+              >
+                <i></i>
+              </a>
+            </div>
+            <!--Top Menu Start -->
+            <div class="navbar-custom-menu">
+              <ul class="nav navbar-nav">
+                <!-- Notifications -->
+                <li class="dropdown custom-dropdown notifications-menu">
+                  <a
+                    href="#"
+                    class=" nav-link"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="icon-notifications "></i>
+                    <span class="badge badge-danger badge-mini rounded-circle"
+                      >4</span
+                    >
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="header">You have 10 notifications</li>
+                    <li>
+                      <!-- inner menu: contains the actual data -->
+                      <ul class="menu">
+                        <li>
+                          <a href="#">
+                            <i class="icon icon-data_usage text-success"></i> 5
+                            new members joined today
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="icon icon-data_usage text-danger"></i> 5
+                            new members joined today
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="icon icon-data_usage text-yellow"></i> 5
+                            new members joined today
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="footer p-2 text-center">
+                      <a href="#">View all</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Search -->
+                <li>
+                  <a
+                    class="nav-link "
+                    data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent"
+                    aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <i class=" icon-search3 "></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header End-->
+
+      <!-- Modal -->
+      <div class="modal fade" id="sesiModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Tambah Soal</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="counter-title">Sesi</div>
+                <select class="form-control">
+                  <option>Warmup</option>
+                  <option>Penyisihan</option>
+                  <option>Final</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="inputSoal" class="col-form-label">Nama Soal</label>
+                  <input type="text" class="form-control" id="inputSoal">
+              </div>
+
+              <div class="form-group">
+                <label for="inputFile" class="col-form-label">File Soal</label>
+                <input type="file" class="form-control" id="inputFile">
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal End-->
+
+      <!-- content -->
+      <div class="page has-sidebar-left">
+        <header class="my-3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <h1 class="s-24">
+                  <i class="icon-pages"></i>
+                  Soal <!-- <span class="s-14">Sesi</span> -->
+                </h1>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="container-fluid my-3">
+          <div class="counter-box white r-5 p-3">
+              
+            <button type="button" class="btn btn-primary btn-sm" 
+                    style="margin: 0 0 15px 15px;"
+                    data-toggle="modal" data-target="#sesiModal">Tambah Data
+            </button>
+
+            <!-- Using datatables -->
+            <table class="table table-bordered table-hover data-tables"
+            data-options='{"searching":true}'>
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Sesi</th>
+                  <th>Nama Soal</th>
+                  <th>Aksi</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>1</td>
+                  <td>Warmup</td>
+                  <td>Soal Warmup 1</td>
+                  <td>
+                    <button type="button" class="btn btn-warning btn-xs">
+                      <i class="icon-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-xs">
+                        <i class="icon-trash"></i>
+                      </button>
+                  </td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>Warmup</td>
+                  <td>Soal Warmup 2</td>
+                  <td>
+                    <button type="button" class="btn btn-warning btn-xs">
+                      <i class="icon-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-xs">
+                        <i class="icon-trash"></i>
+                      </button>
+                  </td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>Final</td>
+                  <td>Soal Final</td>
+                  <td>
+                    <button type="button" class="btn btn-warning btn-xs">
+                      <i class="icon-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-xs">
+                        <i class="icon-trash"></i>
+                      </button>
+                  </td>
+               </tr>
+               </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <!-- content End-->
+    </div>
+    <!--/#app -->
+    
+    <script src="js/app.js"></script>
+
+    <script>
+      (function($, d) {
+        $.each(readyQ, function(i, f) {
+          $(f);
+        });
+        $.each(bindReadyQ, function(i, f) {
+          $(d).bind("ready", f);
+        });
+      })(jQuery, document);
+
+      // Input DateTimePicker
+      jQuery(function(){
+        jQuery('#inputDateStart').datetimepicker({
+          format:'Y/m/d',
+          onShow:function( ct ){
+          this.setOptions({
+            maxDate:jQuery('#inputDateEnd').val()?jQuery('#inputDateEnd').val():false
+          })
+          },
+          timepicker:false
+        });
+        jQuery('#inputDateEnd').datetimepicker({
+          format:'Y/m/d',
+          onShow:function( ct ){
+          this.setOptions({
+            minDate:jQuery('#inputDateStart').val()?jQuery('#inputDateStart').val():false
+          })
+          },
+          timepicker:false
+        });
+
+        jQuery('#inputTimeStart').datetimepicker({
+          format:'H:i',
+          onShow:function( ct ){
+          this.setOptions({
+            maxTime:jQuery('#inputTimeEnd').val()?jQuery('#inputTimeEnd').val():false
+          })
+          },
+          datepicker:false
+        });
+        jQuery('#inputTimeEnd').datetimepicker({
+          format:'H:i',
+          onShow:function( ct ){
+          this.setOptions({
+            minTime:jQuery('#inputTimeStart').val()?jQuery('#inputTimeStart').val():false
+          })
+          },
+          datepicker:false
+        });
+      });
+    </script>
+  </body>
+  </html>
